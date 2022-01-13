@@ -41,6 +41,11 @@ input-file:
   - Microsoft.Cdn/stable/2021-06-01/afdx.json
   - Microsoft.Cdn/stable/2021-06-01/cdn.json
   - Microsoft.Cdn/stable/2021-06-01/cdnwebapplicationfirewall.json
+directive:
+  - suppress: DefinitionsPropertiesNamesCamelCase
+    from: afdx.json
+    where: $.definitions.AFDOriginGroupUpdatePropertiesParameters.properties.responseBasedAFDOriginErrorDetectionSettings
+    reason: AFD is the abbreviated form Azure Front Door
 ```
 ### Tag: package-2020-09
 
@@ -51,6 +56,10 @@ input-file:
 - Microsoft.Cdn/stable/2020-09-01/cdn.json
 - Microsoft.Cdn/stable/2020-09-01/afdx.json
 - Microsoft.Cdn/stable/2020-09-01/cdnwebapplicationfirewall.json
+- suppress: DefinitionsPropertiesNamesCamelCase
+  from: afdx.json
+  where: $.definitions.AFDOriginGroupUpdatePropertiesParameters.properties.responseBasedAFDOriginErrorDetectionSettings
+  reason: AFD is the abbreviated form Azure Front Door
 ```
 
 ### Tag: package-2020-04
