@@ -243,7 +243,7 @@
           "AFDProfiles"
         ],
         "description": "Upgrade a profile from Standard_AzureFrontDoor to Premium_AzureFrontDoor.",
-        "operationId": "AFDProfiles_Upgrade",
+        "operationId": "AFDProfiles_UpgradeSku",
         "x-ms-examples": {
           "AFDProfiles_Upgrade": {
             "$ref": "./examples/AFDProfiles_Upgrade.json"
@@ -309,7 +309,7 @@
           "AFDProfiles"
         ],
         "description": "Upgrade a profile from Standard_AzureFrontDoor to Premium_AzureFrontDoor.",
-        "operationId": "AFDProfiles_Downgrade",
+        "operationId": "AFDProfiles_DowngradeSku",
         "x-ms-examples": {
           "AFDProfiles_Upgrade": {
             "$ref": "./examples/AFDProfiles_Upgrade.json"
