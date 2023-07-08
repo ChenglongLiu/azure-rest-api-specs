@@ -3696,7 +3696,7 @@
           "default": {
             "description": "CDN error response describing why the operation failed.",
             "schema": {
-              "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              "$ref": "#/definitions/AfdErrorResponse"
             }
           }
         },
@@ -3731,9 +3731,6 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK. The request has succeeded."
-          },
           "202": {
             "description": "Accepted. The request has been accepted for processing and the operation will complete asynchronously.",
             "headers": {
@@ -3748,7 +3745,7 @@
           "default": {
             "description": "Azure Front Door error response describing why the operation failed.",
             "schema": {
-              "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorResponse"
+              "$ref": "#/definitions/AfdErrorResponse"
             }
           }
         },
@@ -5978,7 +5975,7 @@
         }
       }
     },
-    "AFDUrlSigningAction": {
+    "UrlSigningAction": {
       "description": "Defines the url signing action for the delivery rule.",
       "type": "object",
       "x-ms-discriminator-value": "UrlSigning",
@@ -5993,11 +5990,11 @@
       "properties": {
         "parameters": {
           "description": "Defines the parameters for the action.",
-          "$ref": "#/definitions/AFDUrlSigningActionParameters"
+          "$ref": "#/definitions/AfdUrlSigningActionParameters"
         }
       }
     },
-    "AFDUrlSigningActionParameters": {
+    "AfdUrlSigningActionParameters": {
       "description": "Defines the parameters for the Url Signing action.",
       "type": "object",
       "required": [
@@ -6182,7 +6179,7 @@
       "properties": {
         "error": {
           "description": "The error object.",
-          "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ErrorDetail"
+          "$ref": "./cdn.json#/definitions/ErrorDetail"
         }
       }
     },
