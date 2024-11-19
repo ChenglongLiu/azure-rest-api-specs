@@ -132,11 +132,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "$ref": "#/parameters/subscriptionIdParameter"
@@ -176,11 +172,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "description": "Profile properties needed to create a new profile.",
@@ -247,11 +239,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "profileUpdateParameters",
@@ -312,11 +300,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "$ref": "#/parameters/subscriptionIdParameter"
@@ -490,11 +474,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "$ref": "#/parameters/subscriptionIdParameter"
@@ -545,11 +525,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "$ref": "#/parameters/subscriptionIdParameter"
@@ -591,11 +567,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "$ref": "#/parameters/subscriptionIdParameter"
@@ -637,11 +609,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the Azure Front Door Standard or Azure Front Door Premium or CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "$ref": "#/parameters/subscriptionIdParameter"
@@ -686,11 +654,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "$ref": "#/parameters/subscriptionIdParameter"
@@ -735,11 +699,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -786,11 +746,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -864,11 +820,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -936,11 +888,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -998,11 +946,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1063,11 +1007,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1128,11 +1068,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1196,11 +1132,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1264,11 +1196,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1326,11 +1254,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1382,11 +1306,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1438,11 +1358,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1496,11 +1412,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1581,11 +1493,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1660,11 +1568,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1729,11 +1633,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1785,11 +1685,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1843,11 +1739,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -1928,11 +1820,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -2007,11 +1895,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -2076,11 +1960,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -2132,11 +2012,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -2190,11 +2066,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -2275,11 +2147,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -2347,11 +2215,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
@@ -2422,11 +2286,7 @@
             "$ref": "#/parameters/resourceGroupNameParameter"
           },
           {
-            "name": "profileName",
-            "in": "path",
-            "description": "Name of the CDN profile which is unique within the resource group.",
-            "required": true,
-            "type": "string"
+            "$ref": "#/parameters/profileNameParameter"
           },
           {
             "name": "endpointName",
