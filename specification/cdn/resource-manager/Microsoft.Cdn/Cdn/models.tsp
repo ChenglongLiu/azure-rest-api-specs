@@ -670,6 +670,12 @@ union DeliveryRuleActionName {
    */
   @added(Versions.v2026_09_01_preview)
   OriginSelection: "OriginSelection",
+
+  /**
+   * Invokes an edge extension to process the request or response.
+   */
+  @added(Versions.v2026_09_01_preview)
+  EdgeExtension: "EdgeExtension",
 }
 
 /**
@@ -1706,6 +1712,12 @@ union DeliveryRuleActionParametersType {
    */
   @added(Versions.v2026_09_01_preview)
   DeliveryRuleOriginSelectionActionParameters: "DeliveryRuleOriginSelectionActionParameters",
+
+  /**
+   * The parameters type for the edge extension action.
+   */
+  @added(Versions.v2026_09_01_preview)
+  DeliveryRuleEdgeExtensionActionParameters: "DeliveryRuleEdgeExtensionActionParameters",
 }
 
 #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
@@ -2221,6 +2233,12 @@ union InvocationPoint {
   ClientRequest: "ClientRequest",
   #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
   OriginRequest: "OriginRequest",
+
+  /**
+   * Invoked at the origin response stage, after the response is received from the origin.
+   */
+  @added(Versions.v2026_09_01_preview)
+  OriginResponse: "OriginResponse",
 
   /**
    * Invoked at the client response stage, before the response is returned to the client. Currently only supported for edge actions.
@@ -8526,6 +8544,52 @@ model OriginSelectionActionParameters extends DeliveryRuleActionParameters {
   forwardingProtocol: ForwardingProtocol;
 
   typeName: "DeliveryRuleOriginSelectionActionParameters";
+}
+
+/**
+ * Defines the edge extension action for the delivery rule.
+ */
+@added(Versions.v2026_09_01_preview)
+model EdgeExtensionAction extends DeliveryRuleAction {
+  /**
+   * Defines the parameters for the action.
+   */
+  parameters: EdgeExtensionActionParameters;
+
+  /**
+   * The name of the action for the delivery rule.
+   */
+  name: "EdgeExtension";
+}
+
+/**
+ * Defines the parameters for the edge extension action.
+ */
+@added(Versions.v2026_09_01_preview)
+model EdgeExtensionActionParameters extends DeliveryRuleActionParameters {
+  /**
+   * Reference to the edge extension group to invoke.
+   */
+  edgeExtensionGroupReference: ResourceReference;
+
+  /**
+   * The point in the request/response lifecycle at which the edge extension is invoked.
+   */
+  invocationPoint: InvocationPoint;
+
+  /**
+   * The input key passed to the edge extension. Must be 1-32 characters long and can only contain letters, numbers, underscores, curly brackets, and hyphens.
+   */
+  @pattern("^[a-zA-Z0-9{}_-]{1,32}$")
+  inputKey: string;
+
+  /**
+   * The response variable produced by the edge extension. Must be 1-32 characters long and can only contain letters, underscores, and hyphens.
+   */
+  @pattern("^[a-zA-Z_-]{1,32}$")
+  responseVariable: string;
+
+  typeName: "DeliveryRuleEdgeExtensionActionParameters";
 }
 
 /**
