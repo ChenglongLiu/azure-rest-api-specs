@@ -676,6 +676,12 @@ union DeliveryRuleActionName {
    */
   @added(Versions.v2026_09_01_preview)
   EdgeExtension: "EdgeExtension",
+
+  /**
+   * Selects a specific origin group to route the request to.
+   */
+  @added(Versions.v2026_09_01_preview)
+  OriginGroupSelection: "OriginGroupSelection",
 }
 
 /**
@@ -1718,6 +1724,12 @@ union DeliveryRuleActionParametersType {
    */
   @added(Versions.v2026_09_01_preview)
   DeliveryRuleEdgeExtensionActionParameters: "DeliveryRuleEdgeExtensionActionParameters",
+
+  /**
+   * The parameters type for the origin group selection action.
+   */
+  @added(Versions.v2026_09_01_preview)
+  DeliveryRuleOriginGroupSelectionActionParameters: "DeliveryRuleOriginGroupSelectionActionParameters",
 }
 
 #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
@@ -8544,6 +8556,42 @@ model OriginSelectionActionParameters extends DeliveryRuleActionParameters {
   forwardingProtocol: ForwardingProtocol;
 
   typeName: "DeliveryRuleOriginSelectionActionParameters";
+}
+
+/**
+ * Defines the origin group selection action for the delivery rule.
+ */
+@added(Versions.v2026_09_01_preview)
+model OriginGroupSelectionAction extends DeliveryRuleAction {
+  /**
+   * Defines the parameters for the action.
+   */
+  parameters: OriginGroupSelectionActionParameters;
+
+  /**
+   * The name of the action for the delivery rule.
+   */
+  name: "OriginGroupSelection";
+}
+
+/**
+ * Defines the parameters for the origin group selection action.
+ */
+@added(Versions.v2026_09_01_preview)
+model OriginGroupSelectionActionParameters
+  extends DeliveryRuleActionParameters {
+  /**
+   * The name of the origin group (within the same profile) to route the request to. May be a literal name or a variable such as "{response.origin}".
+   */
+  @maxLength(253)
+  originGroupName: string;
+
+  /**
+   * The protocol this action will use when forwarding traffic to the origin group.
+   */
+  forwardingProtocol: ForwardingProtocol;
+
+  typeName: "DeliveryRuleOriginGroupSelectionActionParameters";
 }
 
 /**
