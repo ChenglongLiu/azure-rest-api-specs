@@ -3354,6 +3354,112 @@ model SharedPrivateLinkResourceProperties {
 }
 
 /**
+ * The JSON object that contains the properties of the edge extension group.
+ */
+@added(Versions.v2026_09_01_preview)
+model EdgeExtensionGroupProperties {
+  ...EdgeExtensionGroupUpdatePropertiesParameters;
+  ...AFDStateProperties;
+}
+
+/**
+ * The JSON object that contains the properties of the edge extension group used for creation or update.
+ */
+@added(Versions.v2026_09_01_preview)
+model EdgeExtensionGroupUpdatePropertiesParameters {
+  /**
+   * The list of edge extensions in this group.
+   */
+  @Azure.ResourceManager.identifiers(#["edgeExtensionName"])
+  edgeExtensions?: EdgeExtension[];
+
+  /**
+   * The path to remap the incoming URL to.
+   */
+  urlPath?: string;
+
+  /**
+   * The time-to-live (TTL) of the cache in seconds.
+   */
+  @maxValue(31536000)
+  @minValue(1)
+  ttl?: int32;
+
+  /**
+   * Load balancing settings for the edge extension group.
+   */
+  loadBalancingSettings?: LoadBalancingSettingsParameters;
+
+  /**
+   * Health probe settings used to determine the health of the edge extension group.
+   */
+  healthProbeSettings?: HealthProbeParameters;
+
+  /**
+   * Whether to allow session affinity on this host. Valid options are 'Enabled' or 'Disabled'
+   */
+  sessionAffinityState?: EnabledState;
+
+  /**
+   * Authentication settings for the edge extension group.
+   */
+  authentication?: OriginAuthenticationProperties;
+}
+
+/**
+ * Edge extension group properties needed for creation or update.
+ */
+@added(Versions.v2026_09_01_preview)
+model EdgeExtensionGroupUpdateParameters {
+  /**
+   * The JSON object that contains the properties of the edge extension group.
+   */
+  #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+  @Azure.ClientGenerator.Core.Legacy.flattenProperty
+  properties?: EdgeExtensionGroupUpdatePropertiesParameters;
+}
+
+/**
+ * Defines an edge extension within an edge extension group.
+ */
+@added(Versions.v2026_09_01_preview)
+model EdgeExtension {
+  /**
+   * The name of the edge extension.
+   */
+  edgeExtensionName: string;
+
+  /**
+   * The hostname of the edge extension server. This string should be a domain name.
+   */
+  hostName: string;
+
+  /**
+   * Priority of the edge extension for load balancing. This property is relevant when the group uses multiple edge extensions.
+   */
+  @maxValue(5)
+  @minValue(1)
+  priority?: int32;
+
+  /**
+   * Weight of the edge extension for load balancing. This property is relevant when the group uses multiple edge extensions.
+   */
+  @maxValue(1000)
+  @minValue(1)
+  weight?: int32;
+
+  /**
+   * Whether to enable the edge extension for load balancing. This property is relevant when the group uses multiple edge extensions.
+   */
+  enabledState?: EnabledState;
+
+  /**
+   * The properties of the private link resource for a private edge extension.
+   */
+  sharedPrivateLinkResource?: SharedPrivateLinkResourceProperties;
+}
+
+/**
  * Origin capacity settings for an origin
  */
 @added(Versions.v2025_09_01_preview)

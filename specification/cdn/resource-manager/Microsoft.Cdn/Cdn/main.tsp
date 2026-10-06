@@ -22,6 +22,7 @@ import "./RuleSet.tsp";
 import "./Rule.tsp";
 import "./SecurityPolicy.tsp";
 import "./AuthPolicy.tsp";
+import "./EdgeExtensionGroup.tsp";
 import "./Secret.tsp";
 import "./KeyGroup.tsp";
 import "./DeploymentVersion.tsp";

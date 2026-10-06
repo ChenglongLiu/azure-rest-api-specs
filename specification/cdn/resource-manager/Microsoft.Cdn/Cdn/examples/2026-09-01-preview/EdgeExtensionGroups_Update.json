@@ -1,0 +1,60 @@
+{
+  "parameters": {
+    "api-version": "2026-09-01-preview",
+    "edgeExtensionGroupName": "edgeExtensionGroup1",
+    "profileName": "profile1",
+    "properties": {
+      "properties": {
+        "ttl": 7200,
+        "sessionAffinityState": "Enabled"
+      }
+    },
+    "resourceGroupName": "RG",
+    "subscriptionId": "00000000-0000-0000-0000-000000000000"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/RG/providers/Microsoft.Cdn/profiles/profile1/edgeExtensionGroups/edgeExtensionGroup1",
+        "name": "edgeExtensionGroup1",
+        "properties": {
+          "urlPath": "/edge-extension",
+          "ttl": 7200,
+          "sessionAffinityState": "Enabled",
+          "edgeExtensions": [
+            {
+              "edgeExtensionName": "extension1",
+              "hostName": "extension1.contoso.com",
+              "priority": 1,
+              "weight": 500,
+              "enabledState": "Enabled"
+            }
+          ],
+          "loadBalancingSettings": {
+            "sampleSize": 4,
+            "successfulSamplesRequired": 3,
+            "additionalLatencyInMilliseconds": 50
+          },
+          "healthProbeSettings": {
+            "probeIntervalInSeconds": 120,
+            "probePath": "/health",
+            "probeProtocol": "Http",
+            "probeRequestType": "HEAD"
+          },
+          "deploymentStatus": "NotStarted",
+          "provisioningState": "Succeeded"
+        },
+        "type": "Microsoft.Cdn/profiles/edgeExtensionGroups"
+      }
+    },
+    "202": {
+      "headers": {
+        "Azure-AsyncOperation": "https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/RG/providers/Microsoft.Cdn/operationResults/operationId?api-version=2026-09-01-preview",
+        "Location": "https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/RG/providers/Microsoft.Cdn/operationResults/operationId?api-version=2026-09-01-preview",
+        "Retry-After": 30
+      }
+    }
+  },
+  "operationId": "EdgeExtensionGroups_Update",
+  "title": "EdgeExtensionGroups_Update"
+}

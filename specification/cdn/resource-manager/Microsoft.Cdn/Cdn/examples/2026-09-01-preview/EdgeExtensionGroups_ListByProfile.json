@@ -1,0 +1,50 @@
+{
+  "parameters": {
+    "api-version": "2026-09-01-preview",
+    "profileName": "profile1",
+    "resourceGroupName": "RG",
+    "subscriptionId": "00000000-0000-0000-0000-000000000000"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "value": [
+          {
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/RG/providers/Microsoft.Cdn/profiles/profile1/edgeExtensionGroups/edgeExtensionGroup1",
+            "name": "edgeExtensionGroup1",
+            "properties": {
+              "urlPath": "/edge-extension",
+              "ttl": 3600,
+              "sessionAffinityState": "Disabled",
+              "edgeExtensions": [
+                {
+                  "edgeExtensionName": "extension1",
+                  "hostName": "extension1.contoso.com",
+                  "priority": 1,
+                  "weight": 500,
+                  "enabledState": "Enabled"
+                }
+              ],
+              "loadBalancingSettings": {
+                "sampleSize": 4,
+                "successfulSamplesRequired": 3,
+                "additionalLatencyInMilliseconds": 50
+              },
+              "healthProbeSettings": {
+                "probeIntervalInSeconds": 120,
+                "probePath": "/health",
+                "probeProtocol": "Http",
+                "probeRequestType": "HEAD"
+              },
+              "deploymentStatus": "NotStarted",
+              "provisioningState": "Succeeded"
+            },
+            "type": "Microsoft.Cdn/profiles/edgeExtensionGroups"
+          }
+        ]
+      }
+    }
+  },
+  "operationId": "EdgeExtensionGroups_ListByProfile",
+  "title": "EdgeExtensionGroups_ListByProfile"
+}
