@@ -531,6 +531,24 @@ union ForwardingProtocol {
 }
 
 /**
+ * Fallback mechanism to use when the origin selection action cannot resolve an origin.
+ */
+@added(Versions.v2026_09_01_preview)
+union FallbackMechanism {
+  string,
+
+  /**
+   * Route the request using the default route.
+   */
+  DefaultRoute: "DefaultRoute",
+
+  /**
+   * Fail the request.
+   */
+  FailRequest: "FailRequest",
+}
+
+/**
  * whether this route will be linked to the default endpoint domain.
  */
 union LinkToDefaultDomain {
@@ -646,6 +664,12 @@ union DeliveryRuleActionName {
   @removed(Versions.v2025_12_01)
   @added(Versions.v2026_04_01_preview)
   AfdUrlSigning: "AfdUrlSigning",
+
+  /**
+   * Selects a specific origin to route the request to.
+   */
+  @added(Versions.v2026_09_01_preview)
+  OriginSelection: "OriginSelection",
 }
 
 /**
@@ -1676,6 +1700,12 @@ union DeliveryRuleActionParametersType {
   @removed(Versions.v2025_12_01)
   @added(Versions.v2026_04_01_preview)
   DeliveryRuleEdgeActionParameters: "DeliveryRuleEdgeActionParameters",
+
+  /**
+   * The parameters type for the origin selection action.
+   */
+  @added(Versions.v2026_09_01_preview)
+  DeliveryRuleOriginSelectionActionParameters: "DeliveryRuleOriginSelectionActionParameters",
 }
 
 #suppress "@azure-tools/typespec-azure-core/documentation-required" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
@@ -8344,6 +8374,52 @@ model OriginGroupOverrideActionParameters extends DeliveryRuleActionParameters {
   originGroup: ResourceReference;
 
   typeName: "DeliveryRuleOriginGroupOverrideActionParameters";
+}
+
+/**
+ * Defines the origin selection action for the delivery rule.
+ */
+@added(Versions.v2026_09_01_preview)
+model OriginSelectionAction extends DeliveryRuleAction {
+  /**
+   * Defines the parameters for the action.
+   */
+  parameters: OriginSelectionActionParameters;
+
+  /**
+   * The name of the action for the delivery rule.
+   */
+  name: "OriginSelection";
+}
+
+/**
+ * Defines the parameters for the origin selection action.
+ */
+@added(Versions.v2026_09_01_preview)
+model OriginSelectionActionParameters extends DeliveryRuleActionParameters {
+  /**
+   * The origin to route the request to. Must be 1-256 characters long and can only contain letters, numbers, underscores, dots, curly brackets, and hyphens.
+   */
+  @pattern("^[a-zA-Z0-9{}_.-]{1,256}$")
+  origin: string;
+
+  /**
+   * Runtime dynamic origin host scope. A single scope pattern is required and must resolve to a registrable root/apex domain (minimum two dots); allow-all is not supported.
+   */
+  @maxLength(253)
+  originHostScope: string;
+
+  /**
+   * The fallback mechanism to use when the origin cannot be resolved.
+   */
+  fallbackMechanism: FallbackMechanism;
+
+  /**
+   * The protocol this action will use when forwarding traffic to the origin.
+   */
+  forwardingProtocol: ForwardingProtocol;
+
+  typeName: "DeliveryRuleOriginSelectionActionParameters";
 }
 
 /**
