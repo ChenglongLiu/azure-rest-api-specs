@@ -8628,6 +8628,7 @@ model EdgeExtensionActionParameters extends DeliveryRuleActionParameters {
   /**
    * The input key passed to the edge extension. Must be 1-32 characters long and can only contain letters, numbers, underscores, curly brackets, and hyphens.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/secret-prop" "Not a secret: inputKey is a non-sensitive, regex-validated identifier that maps request context to the edge extension input; it is stored and logged in plaintext by the service."
   @pattern("^[a-zA-Z0-9{}_-]{1,32}$")
   inputKey: string;
 
